@@ -10,7 +10,6 @@
  * @prev: Pointer to the previous element of the list
  * @next: Pointer to the next element of the list
  */
-void swap(int *x, int *y);
 
 typedef struct listint_s
 

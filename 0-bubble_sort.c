@@ -9,33 +9,24 @@
 void bubble_sort(int *array, size_t size)
 
 {
-	size_t i, j;
+	int j, test;
+	size_t i;
 
-	if (size >= 2)
-		for (i = 0; i < size; i++)
+	if (size < 1)
+		return;
+	while (test)
+	{
+		test = 0;
+		for (i = 0; i < (size - 1); i++)
 		{
-			for (j = 0; j < size - i - 1; j++)
+			if (array[i] > array[i + 1])
 			{
-				if (array[j] > array[j + 1])
-				{
-					swap(&array[j], &array[j + 1]);
-					print_array(array, size);
-				}
+				j = array[i];
+				array[i] = array[i + 1];
+				array[i + 1] = j;
+				print_array(array, size);
+				test += 1;
 			}
 		}
-}
-
-
-/**
- * swap - function that swaps two integers
- * @x: first to swap
- * @y: swapping with @y
- */
-
-void swap(int *x, int *y)
-
-{
-	int temp = *x;
-	*x = *y;
-	*y = temp;
+	}
 }
